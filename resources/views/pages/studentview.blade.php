@@ -97,8 +97,8 @@
                                         <span>{{ $item->earlyentry }}</span>
                                     </div>
                                     <div class="col-12 mb-4 col-sm-4 align-items-center d-flex flex-column">
-                                        <span class="fw-bold text-success">Nama Lengkap</span>
-                                        <span>{{ $item->address }}</span>
+                                        <span class="fw-bold text-success">Pengasuh Pondok</span>
+                                        <span>KH. MUH. NURUL HUDA, SP., MA.</span>
                                     </div>
                                 </div>
                             @endforeach

@@ -28,6 +28,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Mail Download
     Route::post('/mail-view/pppanggung/{id}', [mailController::class, 'mailPP']);
+    Route::post('/mail-view/ppmia/{id}', [mailController::class, 'mailMia']);
+    Route::post('/mail-view/ppdt/{id}', [mailController::class, 'mailDt']);
 });
 
 Route::middleware('auth')->group(function () {

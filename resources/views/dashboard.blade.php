@@ -62,6 +62,20 @@
                                         {{ $item->placeofbirth }}, {{ $item->dateofbirth }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex">
+                                        <form action="/mail-view/ppmia/{{ $item->id }}" method="post">
+                                            @csrf
+                                            <button type="submit"
+                                                class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full h-8 w-8 flex items-center justify-center ml-4">
+                                                <i class="fa-solid fa-print"></i>
+                                            </button>
+                                        </form>
+                                        <form action="/mail-view/ppdt/{{ $item->id }}" method="post">
+                                            @csrf
+                                            <button type="submit"
+                                                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full h-8 w-8 flex items-center justify-center ml-4">
+                                                <i class="fa-solid fa-print"></i>
+                                            </button>
+                                        </form>
                                         <form action="/mail-view/pppanggung/{{ $item->id }}" method="post">
                                             @csrf
                                             <button type="submit"
