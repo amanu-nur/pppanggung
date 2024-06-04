@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\mailController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\student;
 use App\Http\Controllers\viewController;
@@ -24,6 +25,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Add Student
     Route::resource('/student', student::class);
+
+    // Mail Download
+    Route::post('/mail-view/pppanggung/{id}', [mailController::class, 'mailPP']);
 });
 
 Route::middleware('auth')->group(function () {

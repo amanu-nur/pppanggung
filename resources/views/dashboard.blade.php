@@ -62,10 +62,13 @@
                                         {{ $item->placeofbirth }}, {{ $item->dateofbirth }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex">
-                                        <a href="{{ route('student.show', $item->id) }}"
-                                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-8 w-8 flex items-center justify-center ml-4">
-                                            <i class="fa-solid fa-print"></i>
-                                        </a>
+                                        <form action="/mail-view/pppanggung/{{ $item->id }}" method="post">
+                                            @csrf
+                                            <button type="submit"
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full h-8 w-8 flex items-center justify-center ml-4">
+                                                <i class="fa-solid fa-print"></i>
+                                            </button>
+                                        </form>
                                         <a href="{{ route('student.edit', $item->id) }}"
                                             class="bg-yellow-500 hover:yellow-red-700 text-white font-bold py-2 px-4 rounded-full h-8 w-8 flex items-center justify-center ml-4">
                                             <i class="fa-solid fa-pencil"></i>

@@ -6,6 +6,7 @@ use App\Models\student as ModelsStudent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+
 class student extends Controller
 {
     public function index()
@@ -20,11 +21,7 @@ class student extends Controller
         return view('pages.edit', ['data' => $data]);
     }
 
-    public function show($id)
-    {
-        $data = ModelsStudent::find($id);
-        return view('pages.show', ['data' => $data]);
-    }
+
 
 
     public function store(Request $request)
