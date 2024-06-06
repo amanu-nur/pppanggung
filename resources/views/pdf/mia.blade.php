@@ -59,6 +59,24 @@ $dateNewMail = str_replace($bulanInggris, $bulanIndonesia, $tanggaMail);
         td {
             padding-top: 5px;
         }
+
+        .ttd-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .ttd-container img {
+            display: block;
+            width: 60%;
+            height: auto;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 100%
+        }
     </style>
 </head>
 
@@ -134,12 +152,14 @@ $dateNewMail = str_replace($bulanInggris, $bulanIndonesia, $tanggaMail);
         <p style="line-height:1.5;text-align: justify; margin-top:25px">Demikian surat ini kami buat agar digunakan
             sebagaimana mestinya, dan atas perhatiannya disampaikan terimakasih.</p>
         <div style="margin-top: 80px;float:right">
-            <div style="width: 250px;text-align: left;">
-                <p>Tulungagung, {{ $dateNewMail }}</p>
-                <p>Pengasuh Pondok</p>
-                {{-- <img style="margin-top:10px; margin-bottom: 10px"
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=http://36.91.75.35/student-view/{{ $data->qrid }}" /> --}}
-                <p style="font-weight:bold;">KH. Samsul Umam, S.Pd</p>
+            <div style="width: 250px;text-align: center;" class="ttd-container">
+                <img style="margin-top:10px; margin-bottom: 10px" src="{{ asset('ttdmia.png') }}" width="165" />
+                <div class="overlay-text">
+                    <p>Tulungagung,
+                        {{ $dateNewMail }}</p>
+                    <p>Pengasuh Pondok</p>
+                    <p style="font-weight:bold; margin-top: 70px">KH. Samsul Umam, S.Pd</p>
+                </div>
             </div>
         </div>
     </div>

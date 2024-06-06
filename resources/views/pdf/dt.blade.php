@@ -59,6 +59,24 @@ $dateNewMail = str_replace($bulanInggris, $bulanIndonesia, $tanggaMail);
         td {
             padding-top: 5px;
         }
+
+        .ttd-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .ttd-container img {
+            display: block;
+            width: 80%;
+            height: auto;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: -35px;
+            left: 0;
+            width: 100%
+        }
     </style>
 </head>
 
@@ -129,13 +147,14 @@ $dateNewMail = str_replace($bulanInggris, $bulanIndonesia, $tanggaMail);
         <p style="line-height:1.5;text-align: justify; margin-top:15px">Demikian Surat Keterangan ini dibuat untuk
             menjadikan diperiksa dan dapat dipergunakan sebagaimana semestinya.</p>
         <div style="margin-top: 80px;float:right">
-            <div style="width: 250px;text-align: left;">
-                <p style="text-align:center;">Tulungagung, {{ $dateNewMail }}</p>
-                <p style="text-align:center;">Kepala Pondok Pesantren</p>
-                <p style="text-align:center;">DARUT TAQWA</p>
-                {{-- <img style="margin-top:10px; margin-bottom: 10px"
-                    src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=http://36.91.75.35/student-view/{{ $data->qrid }}" /> --}}
-                <p style="font-weight:bold;text-align:center"><u>LATIFUL ANWAR, S.Pd.I</u></p>
+            <div style="width: 250px;text-align: center;" class="ttd-container">
+                <img style="margin-top:10px; margin-bottom: 10px" src="{{ asset('ttddt.png') }}" width="165" />
+                <div class="overlay-text">
+                    <p style="text-align:center;">Tulungagung, {{ $dateNewMail }}</p>
+                    <p style="text-align:center;">Kepala Pondok Pesantren</p>
+                    <p style="text-align:center;">DARUT TAQWA</p>
+                    <p style="font-weight:bold;text-align:center; margin-top:60px"><u>LATIFUL ANWAR, S.Pd.I</u></p>
+                </div>
             </div>
         </div>
     </div>
